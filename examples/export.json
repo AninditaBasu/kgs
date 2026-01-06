@@ -1,0 +1,9 @@
+{
+  "id": "T101",
+  "type": "topic",
+  "title": "Installation overview",
+  "relations": {
+    "prerequisites": ["T203", "T305"]
+  },
+  "content": "<p>This topic explains how to install the product.</p>"
+}
