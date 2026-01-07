@@ -16,13 +16,25 @@ KGS does not define storage formats, rendering mechanisms, or user interfaces.
 
 KGS models content units as entities identified by stable identifiers and connected through explicit relationships. Implementations MAY store entities as files, database records, or other persistent representations.
 
+- [Non-goals](#non-goals)
 - [Entity definition](#entity-definition)
 - [Relationship model](#relationship-model)
+- [Relationship vocabulary](#relationship-vocabulary)
 - [Identity stability](#identity-stability)
 - [Materialisation format](#materialisation-format)
 - [Projection principle](#projection-principle)
 - [Conformance](#conformance)
 - [Reference examples (non-normative)](#reference-examples-non-normative)
+
+## Non-goals
+
+KGS MUST NOT define:
+
+- navigation models
+- user interfaces
+- graph traversal algorithms
+- search or retrieval strategies
+
 
 ## Entity definition
 
@@ -46,7 +58,10 @@ The representation format is implementation-specific.
 
 ## Relationship model
 
-Relationships MUST be represented as references to stable identifiers.
+Relationships MUST be represented as references to stable identifiers. A relationship consists of:
+
+- a relationship type (string),
+- one or more target entity identifiers.
 
 ### Example (non-normative)
 
@@ -57,6 +72,15 @@ prerequisites:
 ```
 
 Relationships are directional. Implementations MAY define inverse relationships, but they MUST be derivable from the primary relationship definitions.
+
+## Relationship vocabulary
+
+KGS does not prescribe a fixed vocabulary of relationship types.
+
+Implementations SHOULD maintain a controlled vocabulary for relationship types to ensure semantic consistency within a content corpus.
+
+Relationship type identifiers SHOULD be stable across publication cycles.
+
 
 ## Identity stability
 
@@ -75,7 +99,7 @@ A conforming implementation MUST provide a machine-readable materialisation of t
   "relations": {
     "prerequisites": ["T203"]
   },
-  "content": "<html>…</html>"
+  "content": "<implementation-defined representation>"
 }
 ```
 
@@ -85,7 +109,21 @@ Navigation structures are projections, not sources of truth. Modifying a project
 
 ## Conformance
 
-An implementation is KGS-compliant if it satisfies all MUST and MUST NOT requirements defined in this document.
+An implementation is KGS-compliant if it satisfies all normative requirements in this specification.
+
+In particular, a KGS-compliant implementation MUST:
+
+- assign stable identifiers to content entities,
+- declare typed relationships using those identifiers,
+- provide a machine-readable materialisation of the entity graph,
+- treat navigational artifacts strictly as projections.
+
+A KGS-compliant implementation MUST NOT:
+
+- derive semantic relationships from navigation structures,
+- modify underlying relationships through projection-layer interactions,
+- require a specific storage format, authoring system, or rendering technology.
+
 
 ## Reference examples (non-normative)
 
@@ -93,6 +131,7 @@ This repository includes illustrative examples of a single KGS entity expressed 
 
 - `examples/markdown.md`
 - `examples/dita.xml`
+- `examples/database.sql`
 - `examples/export.json`
 
 These examples demonstrate how the same semantic contract can be implemented across heterogeneous authoring systems.

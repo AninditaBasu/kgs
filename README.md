@@ -6,7 +6,7 @@ It is intended for systems where content is authored as independent topics (Mark
 
 KGS is not a storage format, publishing pipeline, CMS, or UI framework. It defines only the semantic layer that connects content units.
 
-This repository contains the normative specification, and reference examples that demonstrate the same logical entity expressed in three different carrier formats.
+This repository contains the normative specification, and reference examples that demonstrate the same logical entity expressed in different carrier formats.
 
 The specification is about:
 
