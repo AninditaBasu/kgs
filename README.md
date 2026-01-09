@@ -32,9 +32,10 @@ This enables enterprise-grade knowledge graphs without forcing a specific toolch
 
 ## Repository contents
 
-- `spec.md`: Normative Knowledge Graph Schema specification  
+- `spec.md`: Normative Knowledge Graph Schema (KGS) specification  
 - `examples/storage/`: Non-normative entity examples (Markdown, DITA, JSON, SQL)  
 - `examples/carrier/`: Non-normative knowledge-graph exports (RDF/Turtle, JSON-LD)
+- `quick-start/`: Non-normative procedural guide for implementing KGS
 
 ## Quick example
 
