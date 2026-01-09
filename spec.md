@@ -63,6 +63,8 @@ Relationships MUST be represented as references to stable identifiers. A relatio
 - a relationship type (string),
 - one or more target entity identifiers.
 
+Relationships MUST be asserted on the source entity only; inverse relationships MUST be derived and MUST NOT be asserted independently.
+
 ### Example (non-normative)
 
 ```
@@ -79,6 +81,8 @@ KGS does not prescribe a fixed vocabulary of relationship types.
 
 Implementations SHOULD maintain a controlled vocabulary for relationship types to ensure semantic consistency within a content corpus.
 
+Implementations SHOULD define domain and range constraints for relationship types.
+
 Relationship type identifiers SHOULD be stable across publication cycles.
 
 
@@ -86,9 +90,15 @@ Relationship type identifiers SHOULD be stable across publication cycles.
 
 IDs MUST be stable across file renames, moves, and publication cycles.
 
+When materialised in RDF, each KGS identifier MUST be mapped to a stable, dereferenceable IRI.
+
 ## Materialisation format
 
 A conforming implementation MUST provide a machine-readable materialisation of the graph in which each entity is represented by its identifier, type, and relationships.
+
+KGS implementations MAY use entity-centric formats such as JSON, Markdown, or XML for storage and authoring.
+
+For semantic interchange, validation, and reasoning, RDF, OWL, and SKOS serialisations are RECOMMENDED carrier formats.
 
 ### Example (non-normative)
 
@@ -106,6 +116,8 @@ A conforming implementation MUST provide a machine-readable materialisation of t
 ## Projection principle
 
 Navigation structures are projections, not sources of truth. Modifying a projection MUST NOT change the underlying semantic relationships.
+
+Projections MUST be fully derivable from the underlying KGS materialisation without introducing new semantic relationships.
 
 ## Conformance
 
@@ -127,11 +139,17 @@ A KGS-compliant implementation MUST NOT:
 
 ## Reference examples (non-normative)
 
-This repository includes illustrative examples of a single KGS entity expressed in different carrier formats:
+This repository includes illustrative examples of KGS entities expressed in different storage formats, and KGS graphs expressed in different carrier formats:
 
-- `examples/markdown.md`
-- `examples/dita.xml`
-- `examples/database.sql`
-- `examples/export.json`
+```
+examples/
+  storage/
+    markdown.md
+    dita.xml
+    database.sql
+    export.json
+  carrier/
+    export.ttl
+```
 
 These examples demonstrate how the same semantic contract can be implemented across heterogeneous authoring systems.

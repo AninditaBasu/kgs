@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "kgs": "https://kgs.example/schema#",
+    "ex": "https://kgs.example/entity/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+
+    "Topic": "kgs:Topic",
+    "hasPrerequisite": {
+      "@id": "kgs:hasPrerequisite",
+      "@type": "@id"
+    },
+
+    "id": "@id",
+    "type": "@type",
+    "title": "rdfs:label"
+  },
+
+  "@graph": [
+    {
+      "id": "ex:T101",
+      "type": "Topic",
+      "title": "Installation overview",
+      "hasPrerequisite": [
+        "ex:T203",
+        "ex:T305"
+      ]
+    },
+    {
+      "id": "ex:T203",
+      "type": "Topic",
+      "title": "Unpack product"
+    },
+    {
+      "id": "ex:T305",
+      "type": "Topic",
+      "title": "Prepare environment"
+    }
+  ]
+}

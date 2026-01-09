@@ -1,0 +1,34 @@
+@prefix kgs: <https://kgs.example/schema#> .
+@prefix ex:  <https://kgs.example/entity/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+### Classes
+kgs:Topic a owl:Class ;
+    rdfs:label "Topic" .
+
+### Relationship vocabulary
+kgs:hasPrerequisite a owl:ObjectProperty ;
+    rdfs:domain kgs:Topic ;
+    rdfs:range  kgs:Topic ;
+    rdfs:label "has prerequisite" .
+
+### Controlled relationship vocabulary (optional SKOS)
+kgs:RelationshipTypes a skos:ConceptScheme ;
+    skos:prefLabel "KGS Relationship Types" .
+
+kgs:hasPrerequisiteConcept a skos:Concept ;
+    skos:inScheme kgs:RelationshipTypes ;
+    skos:prefLabel "hasPrerequisite" .
+
+### Entities
+ex:T101 a kgs:Topic ;
+    rdfs:label "Installation overview" ;
+    kgs:hasPrerequisite ex:T203 , ex:T305 .
+
+ex:T203 a kgs:Topic ;
+    rdfs:label "Unpack product" .
+
+ex:T305 a kgs:Topic ;
+    rdfs:label "Prepare environment" .
