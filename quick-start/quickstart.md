@@ -42,16 +42,16 @@ The following steps show what that shift looks like in practice.
 
 ## How this plays out in a real system
 
-Starting point (what's done by the writing team):
+**Starting point** (what's done by the writing team)
 
 1. Topics contain `<data>` relationship metadata and stable IDs.
 2. Map holds keys for canonical targets.
 3. Build produces:
-  - Ordinary HTML pages for humans.
-  - A `relationships.json` artifact.
-  - Optional graph-derived views (for example, sequence pages).
+   - Ordinary HTML pages for humans.
+   - A `relationships.json` artifact.
+   - Optional graph-derived views (for example, sequence pages).
 
-Human-bot interaction:
+**Human-bot interaction**
 
 1. A user asks the chatbot: "How do I configure message queues?"
 2. The bot retrieves the `message-queues` topic and looks at its relationships in `relationships.json`. It sees `requires: k-install-basics, follows: k-architecture-overview`.
@@ -62,11 +62,11 @@ Human-bot interaction:
 4. The system renders a level-ordered sequence page or panel that shows the path, with links to the source topics.
 5. The bot returns a short synthesised answer and offers to open the path page.
 
-Ending point (what's seen by the user):
+**Ending point** (what's seen by the user)
 
 - A contextual answer.
 - A path view derived from relationships.
 - Links to the topics used for synthesising the answer.
 - Optional: a graph panel (force-directed or hierarchical) showing dependencies and adjacencies.
 
-And now, your documentation is no longer merely a collection of pages. It is a graph whose structure can be inspected, queried, and acted upon.
+Thus, your documentation no longer remains merely a collection of pages and, instead, becomes a graph whose structure can be inspected, queried, and acted upon.
