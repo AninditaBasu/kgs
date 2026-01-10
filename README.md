@@ -75,5 +75,5 @@ Both contain the same semantics but are in different formats. KGS is the contrac
 
 ## License
 
-The KGS specification is licensed under Creative Commons Attribution 4.0 International (CC-BY 4.0).
+The KGS specification is licensed under the Apache License, Version 2.0.
 

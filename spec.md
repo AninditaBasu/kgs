@@ -3,12 +3,14 @@ title: Knowledge Graph Schema (KGS) Spec
 author: Anindita Basu
 version: '1.0.0'
 date: '2026-01-06'
-license: '[CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)'
+license: 'Apache License 2.0'
 ---
 
 # Knowledge Graph Schema (KGS) specification
 
-This specification is licensed by Anindita Basu under Creative Commons Attribution 4.0 International (CC-BY 4.0).
+This document is licensed by Anindita Basu under the Apache License, Version 2.0.
+
+In addition, the non-normative narrative text and examples in this repository may be used under the Creative Commons Attribution 4.0 International (CC-BY-4.0) license.
 
 This document defines the Knowledge Graph Schema (KGS), a format-agnostic model for representing content units as entities connected by explicit semantic relationships.
 
