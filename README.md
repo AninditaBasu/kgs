@@ -1,6 +1,6 @@
 # Knowledge Graph Schema (KGS)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18505998.svg)](https://doi.org/10.5281/zenodo.18505998)
+[![DOI](https://zenodo.org/badge/latestdoi/18505998)](https://doi.org/10.5281/zenodo.18505998)
 
 KGS defines a lightweight, format-agnostic semantic contract for representing documentation content as a true knowledge graph.
 
